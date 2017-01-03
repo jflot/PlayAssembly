@@ -1,6 +1,6 @@
 #~ CC=/usr/bin/g++
 CC=g++
-CFLAGS=  -Wall -Wextra  -Ofast -std=c++11 -march=native -pthread -pipe
+CFLAGS=  -Wall -Wextra  -Ofast -std=c++11  -pthread -pipe
 LDFLAGS=-pthread
 
 
