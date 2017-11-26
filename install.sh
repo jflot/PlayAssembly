@@ -26,4 +26,9 @@ make;
 #reads simulator
 wget https://github.com/GATB/bloocoo/blob/master/test/bloocootest/mutareads;
 
-
+#BRAW
+git clone --recursive https://github.com/Malfoy/BRAW;
+cd BRAW;
+mkdir build;
+make -j 6;
+cd ../..;
