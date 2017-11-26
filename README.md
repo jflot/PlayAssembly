@@ -12,29 +12,33 @@ Add the PlayAssembly and PlayAssembly/BRAW folder to your $PATH:
 
 `export PATH=~/PlayAssembly/:~/PlayAssembly/BRAW/:$PATH`
 
-## Basic tools
+## Basic commands
 
-Create reads file from random genome with sim_reads
+To generate single reads 150-bp long with a 50X coverage and a 0.01 (=1%) error rate
 
-`sim_reads --depth 50 --read_length 100  random.fa ecoli.100bp.50x.fa`
+`simulator ecoli.fa 150 50 0.01 ecoli_15_50_0.01` (the perfect reads are stored in a file named p.ecoli_15.50_0.01.fasta, and the simulated reads with errors in ecoli_15.50_0.01.fasta)
 
-Create reads file from E.coli genome
+To generate paired reads 150-bp long with 700 bp fragment size (= read lengths + distance between the reads), a 50X coverage and a 0.01 (=1%) error rate in the PE (→ ←) orientation (for the ← → choose MP)
 
-`sim_reads --depth 50 --read_length 100  ecoli.fa ecoli.100bp.50x.fa`
+`pairedSimulator random.fa 150 700 50 0.01 random_150_700_50_0.01 PE`
 
-Correct a read file, output a file *_corrected.fasta
+To correct a read file using bloocoo
 
-`Bloocoo -file readrandom.fasta`
+`Bloocoo -file random_150_700_50_0.01.fasta` (this outputs a file with name ending with *_corrected.fasta)
 
-Assemble a read file
+To check the result of the correction
 
-`minia -in  readrandom.fasta`
+`correctionEvaluator p.ecoli_15_50_0.01.fa  ecoli_15_50_0.01.fa ecoli_15_50_0.01_corrected.fasta`
 
-Assemble a read file with custom k
+To assemble a file of reads using minia
+
+`minia -in readrandom.fasta`
+
+To assemble a file of reads using a specific k value
 
 `minia -in  readrandom_corrected.fasta -kmer-size 63`
 
-Evaluate the assembly
+To check the statistics of the resulting assembly
 
 `n50 nadine.contigs.fa`
 
