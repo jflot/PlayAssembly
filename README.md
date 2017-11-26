@@ -3,10 +3,13 @@
 ## Installation
 
 `git clone https://github.com/jflot/PlayAssembly`
+
 `cd PlayAssembly`
+
 `./install.sh`
 
-add the PlayAssembly and PlayAssembly/BRAW folder to your $PATH:
+Add the PlayAssembly and PlayAssembly/BRAW folder to your $PATH:
+
 `export PATH=~/PlayAssembly/:~/PlayAssembly/BRAW/:$PATH`
 
 ## Basic tools
