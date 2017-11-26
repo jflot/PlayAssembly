@@ -1,5 +1,15 @@
-# PlayAssembly
-## Basic commands
+# PlayAssembly: a genome assembly practical
+
+## Installation
+
+'git clone https://github.com/jflot/PlayAssembly'
+'cd PlayAssembly'
+'./install.sh'
+
+add the PlayAssembly and PlayAssembly/BRAW folder to your $PATH:
+'export PATH=~/PlayAssembly/:~/PlayAssembly/BRAW/:$PATH'
+
+## Basic tools
 
 Create reads file from random genome with sim_reads
 
@@ -26,7 +36,7 @@ Evaluate the assembly
 `n50 nadine.contigs.fa`
 
 
-## Try assembly
+## Practical
 
 
 Compare the E. coli assembly with the random sequence
